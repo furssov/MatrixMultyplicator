@@ -1,5 +1,7 @@
 package Decomposition;
 
+import java.util.Arrays;
+
 public class Matrix {
    private int [][] matrix;
 
@@ -40,11 +42,26 @@ public class Matrix {
     }
 
     private boolean checkRange(int hPos, int vPos)  {
-        if (hPos > 1 && vPos > 1 && hPos < matrix.length && vPos < matrix[0].length){
+        if (hPos >= 0 && vPos >= 0 && hPos < matrix.length && vPos < matrix[0].length){
             return true;
         }
         else {
          return false;
         }
+    }
+
+    @Override
+    public String toString() {
+        final String BLANK = " ";
+        StringBuilder s = new StringBuilder("\nMatrix : " + matrix.length + "x"
+                + matrix[0].length + "\n");
+        for (int[] row : matrix) {
+            for (int value : row) {
+                s.append(value).append(BLANK);
+            }
+            s.append("\n");
+        }
+
+        return s.toString();
     }
 }

@@ -1,7 +1,7 @@
 package Decomposition;
 
 public class MatrixMultyplicator {
-    public Matrix multiply(Matrix p, Matrix q) throws MatrixException {
+    public static Matrix multiply(Matrix p, Matrix q) throws MatrixException {
         int v = p.getVerticalLength();
         int h = q.getHorizontalLength();
         int controlSize = p.getHorizontalLength();
